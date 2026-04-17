@@ -43,7 +43,7 @@ export default function SearchBar() {
           {results.map((res, index) => (
             <Link
               key={index}
-              href={`/surah/${res.surahId}#${res.verseId}`}
+              href={`/surah/${res.surahId}#verse-${res.verseId}`}
               onClick={() => setQuery("")}
               className="block p-4 hover:bg-gray-50 border-b last:border-0"
             >

@@ -7,12 +7,16 @@ export default function SurahView({ surah }) {
   return (
     <div className="space-y-8">
       {surah.verses.map((ayah) => (
-        <div key={ayah.id} className="p-4 border-b border-gray-100 last:border-0">
+        <div
+          key={ayah.id}
+          id={`verse-${ayah.id}`}
+          className="p-4 border-b border-gray-100 last:border-0 scroll-mt-24"
+        >
           <div className="flex justify-between items-start mb-4 gap-4">
             <span className="bg-gray-100 px-3 py-1 rounded-full text-xs font-mono">
               {surah.id}:{ayah.id}
             </span>
-            
+
             <p
               style={{
                 fontFamily: settings.arabicFont,
@@ -23,8 +27,8 @@ export default function SurahView({ surah }) {
               {ayah.text}
             </p>
           </div>
-          
-          <p 
+
+          <p
             style={{ fontSize: `${settings.translationFontSize}px` }}
             className="text-left text-gray-700 leading-relaxed"
           >
