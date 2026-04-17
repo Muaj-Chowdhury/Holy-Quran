@@ -1,15 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Amiri, Lateef } from "next/font/google";
 import "./globals.css";
+import { SettingsProvider } from "@/context/SettingsContext";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const amiri = Amiri({ subsets: ["arabic"], weight: ["400", "700"], variable: "--font-amiri" });
+const lateef = Lateef({ subsets: ["arabic"], weight: ["400", "700"], variable: "--font-lateef" });
 
 export const metadata = {
   title: "Create Next App",
@@ -20,9 +14,13 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${amiri.variable} ${lateef.variable} `}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body suppressHydrationWarning={true}>
+        <SettingsProvider>
+          {children}
+        </SettingsProvider>
+      </body>
     </html>
   );
 }
