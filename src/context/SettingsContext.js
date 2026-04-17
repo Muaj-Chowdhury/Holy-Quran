@@ -27,11 +27,11 @@ export const SettingsProvider = ({ children }) => {
     localStorage.setItem("quranSettings", JSON.stringify(settings));
   }, [settings]);
 
-  const updateSettings = (key, value) => {
+  const updateSetting = (key, value) => {
     setSettings((prev) => ({ ...prev, [key]: value }));
   };
   return (
-    <SettingsContext.Provider value={{ settings, updateSettings ,isSidebarOpen, toggleSidebar}}>
+    <SettingsContext.Provider value={{ settings, updateSetting ,isSidebarOpen, toggleSidebar}}>
       {children}
     </SettingsContext.Provider>
   );

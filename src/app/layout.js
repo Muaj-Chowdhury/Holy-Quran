@@ -1,6 +1,9 @@
 import { Amiri, Lateef } from "next/font/google";
 import "./globals.css";
 import { SettingsProvider } from "@/context/SettingsContext";
+import Navbar from "@/components/Navbar";
+import SettingsSidebar from "@/components/SettingsSidebar";
+
 
 const amiri = Amiri({ subsets: ["arabic"], weight: ["400", "700"], variable: "--font-amiri" });
 const lateef = Lateef({ subsets: ["arabic"], weight: ["400", "700"], variable: "--font-lateef" });
@@ -18,7 +21,11 @@ export default function RootLayout({ children }) {
     >
       <body suppressHydrationWarning={true}>
         <SettingsProvider>
-          {children}
+          <Navbar />
+          <SettingsSidebar></SettingsSidebar>
+          <main className="pb-20"> {/* Add padding bottom for mobile comfort */}
+            {children}
+          </main>
         </SettingsProvider>
       </body>
     </html>
