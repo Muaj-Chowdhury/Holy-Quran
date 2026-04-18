@@ -7,7 +7,7 @@ A modern, high-performance Quran reading and exploration web application built w
 ## Live Demo
 
 Live Site: https://holy-quran-peach.vercel.app/
-Screen Recording: [Add your demo video link here]
+Screen Recording: https://drive.google.com/file/d/1ZAI-izjCYdEuext5ZsDgEeoZhe47gwYD/view?usp=drive_link
 
 ---
 
