@@ -1,36 +1,99 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quran Explorer App
 
-## Getting Started
+A modern, high-performance Quran reading and exploration web application built with **Next.js**. This project focuses on speed, usability, and a clean reading experience using Static Site Generation (SSG).
 
-First, run the development server:
+---
+
+## Live Demo
+
+Live Site: https://holy-quran-peach.vercel.app/
+Screen Recording: [Add your demo video link here]
+
+---
+
+## Tech Stack
+
+* Framework: Next.js
+* Frontend: React.js
+* Styling: Tailwind CSS / DaisyUI
+* State Management: React Hooks
+* Data Fetching: Static Site Generation (SSG)
+* Persistence: localStorage
+
+---
+
+## Features & Functionality
+
+### Surah Navigation (Requirement: Surah List Page)
+
+Dynamic List: Displays all 114 Surahs using high-performance Static Site Generation (SSG).
+
+Dual Language: Shows every Surah with its Arabic Name and English Transliteration.
+
+Quick Metadata: Instant view of total verses and revelation type (Meccan/Medinan).
+
+---
+
+### High-Fidelity Reading (Requirement: Ayat Page)
+
+Full Context: Displays the Arabic text alongside its English translation.
+
+SSG Optimized: Every individual Surah page is pre-rendered at build time, ensuring zero loading time for the user.
+
+Responsive Design: Fully fluid layout that adapts perfectly from desktop monitors to mobile screens.
+
+---
+
+### Smart Search (Requirement: Search Functionality)
+
+Translation Search: Real-time filtering through the entire Quranic translation (~6,236 verses).
+
+Deep Link Navigation: Clicking a search result doesn't just open the Surah; it automatically scrolls the user to the exact verse they were looking for using hash-fragment anchoring.
+
+---
+
+### Settings Panel (Requirement: Sidebar & Persistence)
+
+Multi-Font Support: Minimum of 2 distinct Arabic font options (Amiri and Lateef) for personalized calligraphy.
+
+Independent Scaling: Separate sliders to adjust the font size for both the Arabic script and the English translation.
+
+Persistence: Built with localStorage integration, ensuring the user's preferred font and size choices are remembered even after the browser is closed or refreshed.
+
+---
+
+## Challenges & Solutions
+
+### Hydration Error Fix
+
+* Problem: Mismatch between server and client rendering
+* Solution: Controlled client-side rendering with proper state handling
+
+### Search + Scroll Logic
+
+* Problem: Navigating to specific Ayah after search
+* Solution: Implemented hash-based scrolling with `useEffect`
+
+### Performance Optimization
+
+* Used SSG to pre-render all Surah pages
+* Result: Near-instant page loads and better SEO
+
+---
+
+## Future Roadmap
+
+* Audio recitation support
+* Dark mode enhancements
+* Bookmark & favorite Ayahs
+* Multi-language translations
+
+---
+
+## Installation & Setup
+
+### Install dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
